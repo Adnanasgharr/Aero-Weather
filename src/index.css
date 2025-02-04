@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+
+
+@layer base {
+  .dark {
+    --tw-bg-opacity: 1;
+    background-color: #000000
+  }
+}

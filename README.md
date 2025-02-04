@@ -1,10 +1,11 @@
 # Aero-Weather
 
-![localhost_5173_ (1)](https://github.com/user-attachments/assets/5c5291e6-c8ab-424e-bb28-f867787d7a84)
+
+![localhost_5173_ (1)](https://github.com/user-attachments/assets/9bb45716-2141-47cb-b8c9-6c8187150ba1)
+
+![localhost_5173_ (2)](https://github.com/user-attachments/assets/3b3a5dd2-775d-4e20-bba8-c8721e83231a)
 
 
-
-![localhost_5173_ (2)](https://github.com/user-attachments/assets/faf67555-9fb9-4df5-8885-688c06afd654)
 
 
 

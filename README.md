@@ -28,7 +28,7 @@ Aero-Weather brings an intuitive, feature-rich weather experience to your finger
 To get started, clone the repo and install the dependencies:
 
 ```sh
-git clone https://github.com/your-Adnanasgharr/Aero-Weather.git
+git clone https://github.com/Adnanasgharr/Aero-Weather.git
 cd Aero-Weather
 npm install
 ```

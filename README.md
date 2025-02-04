@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 # Aero-Weather
 
 ![localhost_5173_ (1)](https://github.com/user-attachments/assets/5c5291e6-c8ab-424e-bb28-f867787d7a84)
 
-----------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ![localhost_5173_ (2)](https://github.com/user-attachments/assets/faf67555-9fb9-4df5-8885-688c06afd654)
 
@@ -22,6 +21,7 @@ Aero-Weather is a modern weather app built with React 18, Tailwind CSS, and Leaf
 
 Aero-Weather brings an intuitive, feature-rich weather experience to your fingertips! 🚀
 
+
 # Getting Started
 
 To get started, clone the repo and install the dependencies:
@@ -39,13 +39,3 @@ npm run dev
 ```
 
 The app will be running on **localhost:5173**.
-=======
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
->>>>>>> 535cf76 (Initial commit)

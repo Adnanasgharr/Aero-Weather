@@ -170,9 +170,15 @@ const App = () => {
           Search
         </button>
         <Dropdownn className="ml-2 sm:ml-3" />
-        <button className="px-2 sm:px-3 py-1 rounded text-sm sm:text-base text-white bg-black dark:bg-white dark:text-black ml-2 sm:ml-3 hidden sm:block">
-          Support Project
-        </button>
+        <a
+          href="https://github.com/Adnanasgharr/Aero-Weather"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="px-2 sm:px-3 py-1 rounded text-sm sm:text-base text-white bg-black dark:bg-white dark:text-black ml-2 sm:ml-3 hidden sm:block">
+            Support Project
+          </button>
+        </a>
       </div>
 
       <div className="flex flex-col md:flex-row lg:w-full xl:flex-row gap-2 mt-20">
@@ -306,7 +312,7 @@ const App = () => {
           >
             Adnan Asghar{" "}
           </a>
-          <RiLinkedinBoxFill size={20}/>
+          <RiLinkedinBoxFill size={20} />
         </p>
       </div>
 

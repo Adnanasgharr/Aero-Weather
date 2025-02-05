@@ -42,9 +42,6 @@ const Dropdownn = () => {
             <button onClick={() => themeSelector('dark')} className='hover:bg-gray-100 dark:hover:bg-gray-600 w-full text-left p-2 rounded'>
               Dark
             </button>
-            <button onClick={() => themeSelector('system')} className='hover:bg-gray-100 dark:hover:bg-gray-600 w-full text-left p-1 rounded'>
-              System
-            </button>
         </div>
       )}
     </div>

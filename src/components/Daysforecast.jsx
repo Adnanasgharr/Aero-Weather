@@ -1,9 +1,19 @@
 import React from "react";
-import { Sun, Cloud, CloudRain, CloudSnow, Wind } from "lucide-react"; // Import Lucide icons
+import { Sun, Cloud, CloudRain, CloudSnow, Wind } from "lucide-react";
 
-const Daysforecast = ({ forecast }) => {
+const DaysForecast = ({ forecast }) => {
+  // Calculate the overall maximum range based on rounded temperature values
+  const overallMaxRange = forecast.reduce((maxRange, day) => {
+    // Round each reading before calculating min and max
+    const roundedHighs = day.data.map(d => Math.round(d.main.temp_max));
+    const roundedLows = day.data.map(d => Math.round(d.main.temp_min));
+    const tempHigh = Math.max(...roundedHighs);
+    const tempLow = Math.min(...roundedLows);
+    const dayRange = tempHigh - tempLow;
+    return Math.max(maxRange, dayRange);
+  }, 0);
+
   const getWeatherIcon = (iconCode) => {
-    // Map OpenWeatherMap icon codes to Lucide icons
     switch (iconCode) {
       case "01d":
       case "01n":
@@ -13,13 +23,11 @@ const Daysforecast = ({ forecast }) => {
         return <Cloud className="w-8 h-8" />;
       case "03d":
       case "03n":
-        return <Cloud className="w-8 h-8" />;
       case "04d":
       case "04n":
         return <Cloud className="w-8 h-8" />;
       case "09d":
       case "09n":
-        return <CloudRain className="w-8 h-8" />;
       case "10d":
       case "10n":
         return <CloudRain className="w-8 h-8" />;
@@ -33,7 +41,7 @@ const Daysforecast = ({ forecast }) => {
       case "50n":
         return <Cloud className="w-8 h-8" />;
       default:
-        return <Sun className="w-8 h-8" />; // Default icon if no match
+        return <Sun className="w-8 h-8" />;
     }
   };
 
@@ -42,33 +50,29 @@ const Daysforecast = ({ forecast }) => {
       <h2 className="text-lg font-semibold mb-8">6-Day Forecast</h2>
       <div className="space-y-4">
         {forecast.map((day, index) => {
-          const dayName = new Date(day.date).toLocaleDateString("en-US", {
-            weekday: "short",
-          });
-          const tempHigh = Math.max(...day.data.map((d) => d.main.temp_max));
-          const tempLow = Math.min(...day.data.map((d) => d.main.temp_min));
-          const icon = day.data[0].weather[0].icon; // Example: "10d"
+          // Round each temperature reading before calculating min and max
+          const roundedHighs = day.data.map(d => Math.round(d.main.temp_max));
+          const roundedLows = day.data.map(d => Math.round(d.main.temp_min));
+          const tempHigh = Math.max(...roundedHighs);
+          const tempLow = Math.min(...roundedLows);
+          const dayRange = tempHigh - tempLow;
+          // Calculate the progress bar width relative to the overall maximum range
+          const widthPercent = overallMaxRange > 0 ? (dayRange / overallMaxRange) * 100 : 0;
+          const dayName = new Date(day.date).toLocaleDateString("en-US", { weekday: "short" });
+          const icon = day.data[0].weather[0].icon;
 
           return (
-            <div
-              key={index}
-              className="flex items-center justify-between border-b border-gray-700 pb-4"
-            >
+            <div key={index} className="flex items-center justify-between border-b border-gray-700 pb-4">
               <div className="flex items-center justify-between w-[72px]">
-                <span className="text-sm ">{dayName}</span>
-                {getWeatherIcon(icon)} {/* Use the Lucide icon based on the weather condition */}
+                <span className="text-sm">{dayName}</span>
+                {getWeatherIcon(icon)}
               </div>
               <div className="flex items-center gap-2">
                 <div className="flex items-center md:w-24 w-32 bg-gray-700 rounded-full overflow-hidden">
-                  <div
-                    className="h-2 bg-blue-500"
-                    style={{
-                      width: `${((tempHigh - tempLow) / tempHigh) * 100}%`,
-                    }}
-                  ></div>
+                  <div className="h-2 bg-blue-500" style={{ width: `${widthPercent}%` }}></div>
                 </div>
                 <div className="text-sm dark:text-white">
-                  {Math.round(tempLow)}° / {Math.round(tempHigh)}°
+                  {tempLow}° / {tempHigh}°
                 </div>
               </div>
             </div>
@@ -79,4 +83,4 @@ const Daysforecast = ({ forecast }) => {
   );
 };
 
-export default Daysforecast;
+export default DaysForecast;

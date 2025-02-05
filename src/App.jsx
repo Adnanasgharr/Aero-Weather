@@ -14,9 +14,10 @@ import Hourlyforcast from "./components/Hourlyforcast";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import Dropdownn from "./components/Dropdownn";
-import { CodeXml, Heart } from "lucide-react";
+import { CodeXml, Github, Heart } from "lucide-react";
 import Precipitation from "./components/Precipitation";
-import { RiLinkedinBoxFill } from "@remixicon/react";
+import { RiGithubFill, RiLinkedinBoxFill } from "@remixicon/react";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -175,12 +176,12 @@ const App = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="px-2 sm:px-3 py-1 rounded text-sm sm:text-base text-white bg-black dark:bg-white dark:text-black ml-2 sm:ml-3 hidden sm:block">
+          <button className="px-2 sm:px-3 py-1 rounded text-sm sm:text-base text-white bg-black dark:bg-white dark:text-black ml-2 sm:ml-3 hidden sm:flex sm:gap-2">
+            <RiGithubFill />
             Support Project
           </button>
         </a>
       </div>
-
       <div className="flex flex-col md:flex-row lg:w-full xl:flex-row gap-2 mt-20">
         {/* Left Column - Temperature and Forecast */}
         <div className="flex gap-2 flex-col w-full xl:w-auto">
@@ -301,11 +302,11 @@ const App = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center p-2">
+      <div className="flex items-center justify-center pt-4 pb-1">
         <p className="text-[#505050] flex items-center gap-1">
           <CodeXml size={16} /> with <Heart size={16} /> by{" "}
           <a
-            href="https://www.linkedin.com/in/adnan-asghar"
+            href="https://www.linkedin.com/in/adnan-asghar-dev/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#505050] hover:underline"
